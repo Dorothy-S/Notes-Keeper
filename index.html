@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StudyNotes - Manage Your Study Materials</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>📚 StudyNotes</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="create.html">Create Note</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h2>Organize Your Study Notes</h2>
+                <p>Create, manage, and access your study materials from anywhere</p>
+                <a href="create.html" class="hero-btn">Create New Note</a>
+            </div>
+        </section>
+
+        <section class="notes-dashboard">
+            <div class="container">
+                <h3>Your Study Notes</h3>
+                <div class="notes-table">
+                    <table id="notesTable">
+                        <thead>
+                            <tr>
+                                <th>Title</th>
+                                <th>Course</th>
+                                <th>Content Preview</th>
+                                <th>Date Created</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="notesTableBody">
+                            <!-- Notes will be dynamically inserted here -->
+                        </tbody>
+                    </table>
+                    <div id="emptyMessage" class="empty-message">
+                        <p>No notes yet. <a href="create.html">Create your first note!</a></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 StudyNotes Team. INFR3120 Project.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
