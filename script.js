@@ -1,29 +1,37 @@
-// Notes System
+// Notes System (stores notes using localStorage)
 class NotesManager {
     constructor() {
+        // Load notes or create empty list
         this.notes = JSON.parse(localStorage.getItem("studynotes")) || [];
         this.init();
     }
 
+    // Decide which page logic to run
     init() {
         const page = window.location.pathname.split("/").pop();
+        
         if (page === "index.html" || page === "") {
-            this.showNotes();
-        } else if (page === "create.html") {
-            this.handleCreateForm();
-        } else if (page === "edit.html") {
-            this.handleEditForm();
+            this.showNotes();      // Dashboard
+        } 
+        else if (page === "create.html") {
+            this.handleCreateForm(); // Create page
+        } 
+        else if (page === "edit.html") {
+            this.handleEditForm();   // Edit page
         }
     }
 
+    // Save notes back to storage
     save() {
         localStorage.setItem("studynotes", JSON.stringify(this.notes));
     }
 
+    // Simple unique ID generator
     makeId() {
         return Date.now().toString(36);
     }
 
+    // Create new note
     addNote(title, course, content) {
         this.notes.unshift({
             id: this.makeId(),
@@ -35,15 +43,18 @@ class NotesManager {
         this.save();
     }
 
+    // Find one note by ID
     getNote(id) {
         return this.notes.find(n => n.id === id);
     }
 
+    // Update existing note
     updateNote(id, title, course, content) {
-        const index = this.notes.findIndex(n => n.id === id);
-        if (index !== -1) {
-            this.notes[index] = {
-                ...this.notes[index],
+        const i = this.notes.findIndex(n => n.id === id);
+
+        if (i !== -1) {
+            this.notes[i] = {
+                ...this.notes[i],
                 title,
                 course,
                 content,
@@ -53,17 +64,20 @@ class NotesManager {
         }
     }
 
+    // Delete a note
     deleteNote(id) {
         this.notes = this.notes.filter(n => n.id !== id);
         this.save();
-        this.showNotes();
+        this.showNotes(); // Refresh table
     }
 
+    // Show notes on homepage table
     showNotes() {
         const body = document.getElementById("notesTableBody");
         const empty = document.getElementById("emptyMessage");
         if (!body) return;
 
+        // If nothing saved, show empty message
         if (this.notes.length === 0) {
             body.innerHTML = "";
             empty.style.display = "block";
@@ -72,6 +86,7 @@ class NotesManager {
 
         empty.style.display = "none";
 
+        // Fill rows with note data
         body.innerHTML = this.notes.map(n => `
             <tr>
                 <td>${this.clean(n.title)}</td>
@@ -86,12 +101,14 @@ class NotesManager {
         `).join("");
     }
 
+    // Handle create note form
     handleCreateForm() {
         const form = document.getElementById("noteForm");
         if (!form) return;
 
         form.addEventListener("submit", e => {
             e.preventDefault();
+
             const title = document.getElementById("noteTitle").value.trim();
             const course = document.getElementById("noteCourse").value;
             const content = document.getElementById("noteContent").value.trim();
@@ -99,28 +116,33 @@ class NotesManager {
             if (!title || !course || !content) return;
 
             this.addNote(title, course, content);
-            window.location.href = "index.html";
+            window.location.href = "index.html"; // Go back
         });
     }
 
+    // Handle editing form
     handleEditForm() {
         const params = new URLSearchParams(window.location.search);
         const id = params.get("id");
         const note = this.getNote(id);
 
+        // If note not found, return to homepage
         if (!note) {
             window.location.href = "index.html";
             return;
         }
 
+        // Fill form with existing data
         document.getElementById("editNoteId").value = note.id;
         document.getElementById("editNoteTitle").value = note.title;
         document.getElementById("editNoteCourse").value = note.course;
         document.getElementById("editNoteContent").value = note.content;
 
+        // Save edited note
         const form = document.getElementById("editNoteForm");
         form.addEventListener("submit", e => {
             e.preventDefault();
+
             const title = document.getElementById("editNoteTitle").value.trim();
             const course = document.getElementById("editNoteCourse").value;
             const content = document.getElementById("editNoteContent").value.trim();
@@ -132,6 +154,7 @@ class NotesManager {
         });
     }
 
+    // Prevent HTML injection
     clean(text) {
         const div = document.createElement("div");
         div.textContent = text;
