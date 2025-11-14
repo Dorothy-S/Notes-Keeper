@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,31 +8,33 @@
 </head>
 <body>
     <header>
-        <div class="container">
-            <div class="logo">
-                <h1>📚 StudyNotes</h1>
-            </div>
-            <nav>
-                <ul>
-                    <li><a href="index.html" class="active">Home</a></li>
-                    <li><a href="create.html">Create Note</a></li>
-                </ul>
-            </nav>
+        <div class="logo">
+            <h1>Study<span>Notes</span></h1>
         </div>
+        <nav>
+            <ul>
+                <li><a href="index.html" class="active">Dashboard</a></li>
+                <li><a href="create.html">Create Note</a></li>
+            </ul>
+        </nav>
     </header>
 
     <main>
-        <section class="hero">
-            <div class="container">
-                <h2>Organize Your Study Notes</h2>
-                <p>Create, manage, and access your study materials from anywhere</p>
+        <section class="hero-section">
+            <div class="about-text">
+                <h1>Organize Your Study Notes</h1>
+                <h2>Create, manage, and access your study materials from anywhere</h2>
+                <p>Streamline your academic workflow with our intuitive note-taking platform designed for students.</p>
                 <a href="create.html" class="hero-btn">Create New Note</a>
+            </div>
+            <div class="about-image">
+                <img src="image.png" alt="Study Notes Illustration">
             </div>
         </section>
 
         <section class="notes-dashboard">
-            <div class="container">
-                <h3>Your Study Notes</h3>
+            <div class="experience-section">
+                <h2>Your Study Notes</h2>
                 <div class="notes-table">
                     <table id="notesTable">
                         <thead>
@@ -57,9 +59,7 @@
     </main>
 
     <footer>
-        <div class="container">
-            <p>&copy; 2025 StudyNotes Team. INFR3120 Project.</p>
-        </div>
+        <p>&copy; 2025 StudyNotes Team. INFR3120 Project.</p>
     </footer>
 
     <script src="script.js"></script>
