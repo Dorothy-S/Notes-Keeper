@@ -2,15 +2,14 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edit Note - StudyNotes</title>
+    <title>Edit Note</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
+    <!-- Header -->
     <header>
-        <div class="logo">
-            <h1>Study<span>Notes</span></h1>
-        </div>
+        <h1 class="logo">Study<span>Notes</span></h1>
         <nav>
             <ul>
                 <li><a href="index.html">Dashboard</a></li>
@@ -19,46 +18,36 @@
         </nav>
     </header>
 
+    <!-- Main Content -->
     <main>
-        <section class="edit-section">
-            <div class="experience-section">
-                <h2>Edit Study Note</h2>
-                <form id="editNoteForm" class="contact-card">
-                    <input type="hidden" id="editNoteId">
-                    
-                    <div class="form-group">
-                        <label for="editNoteTitle">Note Title:</label>
-                        <input type="text" id="editNoteTitle" name="editNoteTitle" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="editNoteCourse">Course/Subject:</label>
-                        <select id="editNoteCourse" name="editNoteCourse" required>
-                            <option value="">Select a course</option>
-                            <option value="INFR3120">INFR3120 - Web & Script Programming</option>
-                            <option value="INFR3110">INFR3110 - Database Management</option>
-                            <option value="INFR3130">INFR3130 - Software Engineering</option>
-                            <option value="MATH1010">MATH1010 - Calculus</option>
-                            <option value="Other">Other</option>
-                        </select>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="editNoteContent">Note Content:</label>
-                        <textarea id="editNoteContent" name="editNoteContent" rows="10" required></textarea>
-                    </div>
-                    
-                    <div class="form-actions">
-                        <button type="submit" class="btn-primary">Update Note</button>
-                        <a href="index.html" class="btn-secondary">Cancel</a>
-                    </div>
-                </form>
-            </div>
-        </section>
+        <h2>Edit Note</h2>
+
+        <form id="editNoteForm">
+            <input type="hidden" id="editNoteId">
+
+            <label for="editNoteTitle">Title</label>
+            <input type="text" id="editNoteTitle" required>
+
+            <label for="editNoteCourse">Course</label>
+            <select id="editNoteCourse" required>
+                <option value="">Select a course</option>
+                <option value="INFR3120">INFR3120 - Web Development</option>
+                <option value="INFR3110">INFR3110 - Databases</option>
+                <option value="INFR3130">INFR3130 - Software Engineering</option>
+                <option value="MATH1010">MATH1010 - Calculus</option>
+                <option value="Other">Other</option>
+            </select>
+
+            <label for="editNoteContent">Content</label>
+            <textarea id="editNoteContent" rows="10" required></textarea>
+
+            <button type="submit" class="btn-primary">Update</button>
+            <a href="index.html" class="btn-secondary">Cancel</a>
+        </form>
     </main>
 
     <footer>
-        <p>&copy; 2025 StudyNotes Team. INFR3120 Project.</p>
+        <p>&copy; 2025 StudyNotes</p>
     </footer>
 
     <script src="script.js"></script>
