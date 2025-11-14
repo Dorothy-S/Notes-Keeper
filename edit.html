@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,24 +8,22 @@
 </head>
 <body>
     <header>
-        <div class="container">
-            <div class="logo">
-                <h1>📚 StudyNotes</h1>
-            </div>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="create.html">Create Note</a></li>
-                </ul>
-            </nav>
+        <div class="logo">
+            <h1>Study<span>Notes</span></h1>
         </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Dashboard</a></li>
+                <li><a href="create.html">Create Note</a></li>
+            </ul>
+        </nav>
     </header>
 
     <main>
-        <section class="edit-note">
-            <div class="container">
+        <section class="edit-section">
+            <div class="experience-section">
                 <h2>Edit Study Note</h2>
-                <form id="editNoteForm">
+                <form id="editNoteForm" class="contact-card">
                     <input type="hidden" id="editNoteId">
                     
                     <div class="form-group">
@@ -60,9 +58,7 @@
     </main>
 
     <footer>
-        <div class="container">
-            <p>&copy; 2025 StudyNotes Team. INFR3120 Project.</p>
-        </div>
+        <p>&copy; 2025 StudyNotes Team. INFR3120 Project.</p>
     </footer>
 
     <script src="script.js"></script>
