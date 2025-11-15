@@ -116,7 +116,7 @@ class NotesManager {
             const course = document.getElementById("noteCourse").value;
             const content = document.getElementById("noteContent").value.trim();
 
-            if (!title || !course || !content) return; // No empy feilds allowed
+            if (!title || !course || !content) return; // No empty fields allowed
 
             this.addNote(title, course, content);
             window.location.href = "index.html"; // Go back
