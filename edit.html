@@ -1,42 +1,53 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <!-- page setup + responsive sizing -->
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edit Note - StudyNotes</title>
+    <meta name="viewport">
+
+    <title>Create New Note - StudyNotes</title>
+
+    <!-- linking css stylesheet -->
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <!-- Header -->
+
+    <!-- header section for logo + navigation bar -->
     <header>
         <div class="logo">
-            <h1>Study<span>Notes</span></h1>
+            <h1>Study<span>Notes</span></h1> <!-- website title with highlight -->
         </div>
+
+        <!-- navigation bar links -->
         <nav>
             <ul>
-                <li><a href="index.html">Dashboard</a></li>
-                <li><a href="create.html">Create Note</a></li>
+                <li><a href="index.html">Dashboard</a></li> <!-- go back to homepage -->
+                <li><a href="create.html" class="active">Create Note</a></li> <!-- current page -->
             </ul>
         </nav>
     </header>
 
-    <!-- Main Content -->
+    <!-- main content section -->
     <main>
-        <section class="edit-section">
-            <h2>Edit Study Note</h2>
+        <section class="create-section">
 
-            <form id="editNoteForm" class="contact-card">
-                <input type="hidden" id="editNoteId">
+            <!-- page heading for create note -->
+            <h2>Create New Study Note</h2>
 
+            <!-- create note form container -->
+            <form id="noteForm" class="contact-card">
+
+                <!-- note title input section -->
                 <div class="form-group">
-                    <label for="editNoteTitle">Note Title:</label>
-                    <input type="text" id="editNoteTitle" name="editNoteTitle" required>
+                    <label for="noteTitle">Note Title:</label>
+                    <input type="text" id="noteTitle" name="noteTitle" required placeholder="Enter note title">
                 </div>
 
+                <!-- course selection dropdown -->
                 <div class="form-group">
-                    <label for="editNoteCourse">Course/Subject:</label>
-                    <select id="editNoteCourse" name="editNoteCourse" required>
+                    <label for="noteCourse">Course/Subject:</label>
+                    <select id="noteCourse" name="noteCourse" required>
                         <option value="">Select a course</option>
                         <option value="INFR3120">INFR3120 - Web & Script Programming</option>
                         <option value="INFR3110">INFR3110 - Database Management</option>
@@ -46,23 +57,27 @@
                     </select>
                 </div>
 
+                <!-- main content text area -->
                 <div class="form-group">
-                    <label for="editNoteContent">Note Content:</label>
-                    <textarea id="editNoteContent" name="editNoteContent" rows="10" required></textarea>
+                    <label for="noteContent">Note Content:</label>
+                    <textarea id="noteContent" name="noteContent" rows="10" required placeholder="Enter your study notes here..."></textarea>
                 </div>
 
+                <!-- save + cancel buttons -->
                 <div class="form-actions">
-                    <button type="submit" class="btn-primary">Update Note</button>
-                    <a href="index.html" class="btn-secondary">Cancel</a>
+                    <button type="submit" class="btn-primary">Save Note</button> <!-- save note btn -->
+                    <a href="index.html" class="btn-secondary">Cancel</a> <!-- cancel btn -->
                 </div>
             </form>
         </section>
     </main>
 
+    <!-- footer -->
     <footer>
-        <p>StudyNotes Team</p>
+        <p> StudyNotes Team</p>
     </footer>
 
+    <!-- javascript file -->
     <script src="script.js"></script>
 </body>
 </html>
