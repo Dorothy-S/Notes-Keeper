@@ -5,11 +5,12 @@
   box-sizing: border-box;
 }
 
-body { /*page background*/
+/*page background*/
+body { 
   background-color: #1c1c1f;
   color: #c1c1c4;
   font-family: 'Montserrat', Arial, sans-serif;
-  background-image:
+  background-image: /*grid pattern*/
     linear-gradient(#2a2a2e 1px, transparent 1px),
     linear-gradient(90deg, #2a2a2e 1px, transparent 1px);
   background-size: 40px 40px;
@@ -27,37 +28,38 @@ header {
   text-align: center;
 }
 
- /*DS*/
+ /*StudyNotes title in header*/
 header .logo {
   display: inline-block;
   vertical-align: middle;
   margin-right: 40px;
 }
 
+/*StudyNotes title font and colour*/
 header .logo h1 {
   color: #e2e2e5;
   font-size: 1.8rem;
 }
 
+/*StudyNotes title colour*/
 header .logo span {
   color: #3bb89e;
 }
 
-nav { /* navigation bar position*/
+/* navigation bar position*/
+nav { 
   display: inline-block;
   vertical-align: middle;
 }
 
-nav ul {
-  list-style: none;
-}
-
-nav ul li {  /*navigation bar section position */
+/*navigation bar section position */
+nav ul li {  
   display: inline-block;
   margin: 0 12px;
 }
 
-nav ul li a { /*navigation bar section words */
+/*navigation bar section words */
+nav ul li a { 
   text-decoration: none;
   font-weight: 500;
   color: #b5b5b8;
@@ -65,7 +67,8 @@ nav ul li a { /*navigation bar section words */
   transition: 0.3s ease;
 }
 
-nav ul li a::after { /*hover over the section word*/
+/* hover over the section word effect */
+nav ul li a::after { 
   content: '';
   position: absolute;
   width: 0;
@@ -76,17 +79,19 @@ nav ul li a::after { /*hover over the section word*/
   transition: width 0.3s;
 }
 
+/* underline appears on hover or when active */
 nav ul li a:hover::after,
 nav ul li a.active::after {
   width: 100%;
 }
 
+/* hover text color */
 nav ul li a:hover,
 nav ul li a.active {
   color: #3bb89e;
 }
 
-/* Hero Section */
+/* title Section */
 .hero-section {
   padding: 60px 8%;
   max-width: 1100px;
@@ -94,45 +99,52 @@ nav ul li a.active {
   text-align: center;
 }
 
-.about-text { /*about me section horzantal*/
+/* structues title section */
+.about-text { 
   display: inline-block;
   width: 60%;
   vertical-align: middle;
   text-align: left;
 }
 
-.about-image { /*makes image perfect size*/
+ /* image sizeing */
+.about-image {
   display: inline-block;
   width: 30%;
   vertical-align: middle;
   margin-left: 20px;
 }
 
-.about-text h1 { /*makes header bigger */
+/* main header */
+.about-text h1 { 
   font-size: 2.2rem;
   font-weight: 600;
   margin-bottom: 8px;
   color: #e2e2e5;
 }
 
-.about-text h2 { /*makes secound header bigger */
+ /*sub header */
+.about-text h2 {
   font-size: 1.4rem;
   color: #3bb89e;
   margin-bottom: 18px;
 }
 
-.about-text p { /*makes writen part colour */
+/* paragraph */
+.about-text p { 
   color: #a5a5a8;
   margin-bottom: 20px;
   font-size: 1rem;
 }
 
-.about-image img { /*profile picture size and shape*/
+/*profile picture size and shape*/
+.about-image img { 
   width: 100%;
   border-radius: 12px;
   box-shadow: 0 4px 14px rgba(0,0,0,0.4);
 }
 
+/*create new notes button*/
 .hero-btn {
   display: inline-block;
   margin: 6px;
@@ -144,6 +156,7 @@ nav ul li a.active {
   font-weight: 500;
 }
 
+/*create new notes button hover*/
 .hero-btn:hover {
   opacity: 0.9;
 }
@@ -155,7 +168,8 @@ nav ul li a.active {
   margin: auto;
 }
 
-.experience-section { /*experience section styling */
+/*border for notes section */
+.experience-section { 
   max-width: 100%;
   margin: 40px auto;
   padding: 30px;
@@ -164,7 +178,8 @@ nav ul li a.active {
   box-shadow: 0 4px 18px rgba(0,0,0,0.3);
 }
 
-.experience-section h2 { /*experience section title */
+/*notes section title */
+.experience-section h2 { 
   font-size: 1.8rem;
   color: #eee;
   margin-bottom: 20px;
@@ -172,24 +187,27 @@ nav ul li a.active {
   padding-left: 8px;
 }
 
-/* Table Styles */
+/* Table Styling */
 .notes-table {
   width: 100%;
   overflow-x: auto;
 }
 
+/*table structure*/
 table {
   width: 100%;
   border-collapse: collapse;
   margin-top: 20px;
 }
 
+/*table cells formating*/
 th, td {
   padding: 15px 12px;
   text-align: left;
   border-bottom: 1px solid rgba(255,255,255,0.1);
 }
 
+/*table header formating*/
 th {
   background-color: rgba(59, 184, 158, 0.1);
   color: #3bb89e;
@@ -197,18 +215,20 @@ th {
   font-size: 0.9rem;
 }
 
+/*table row hover effect*/
 tr:hover {
   background-color: rgba(255,255,255,0.05);
 }
 
-/* Form Styles */
+/* Form sections */
 .create-section, .edit-section {
   padding: 40px 8%;
   max-width: 800px;
   margin: auto;
 }
 
-.contact-card { /*contact form styling */
+/* contact form card */
+.contact-card { 
   background: rgba(40,40,46,0.95);
   padding: 30px;
   border-radius: 12px;
@@ -218,24 +238,20 @@ tr:hover {
   margin: 0 auto;
 }
 
-.contact-card h2 { /*contact form title */
+/*contact form title */
+.contact-card h2 { 
   color: #3bb89e;
   margin-bottom: 20px;
   text-align: center;
 }
 
+/*margin in input sections */
 .form-group {
   margin-bottom: 20px;
 }
 
-label {
-  display: block;
-  margin-bottom: 8px;
-  color: #b5b5b8;
-  font-weight: 500;
-}
-
-.contact-card input, /*contact form input structure */
+/*create a note input structure */
+.contact-card input, 
 .contact-card select,
 .contact-card textarea {
   width: 100%;
@@ -256,11 +272,6 @@ label {
   box-shadow: 0 0 0 2px rgba(59, 184, 158, 0.2);
 }
 
-.contact-card textarea {
-  resize: vertical;
-  min-height: 150px;
-}
-
 /* Button Styles */
 .form-actions {
   display: flex;
@@ -268,6 +279,7 @@ label {
   margin-top: 25px;
 }
 
+/*buttons formating*/
 .btn-primary, .btn-secondary {
   padding: 12px 30px;
   border: none;
@@ -281,27 +293,19 @@ label {
   flex: 1;
 }
 
+/*save note button*/
 .btn-primary {
   background: #3bb89e;
   color: white;
 }
 
-.btn-primary:hover {
-  opacity: 0.9;
-  transform: translateY(-1px);
-}
-
+/*Cancel note button*/
 .btn-secondary {
   background: #6c757d;
   color: white;
 }
 
-.btn-secondary:hover {
-  background: #5a6268;
-  transform: translateY(-1px);
-}
-
-/* Action Buttons */
+/* Edit/Delete buttons in table */
 .btn-edit, .btn-delete {
   padding: 8px 16px;
   border: none;
@@ -315,45 +319,51 @@ label {
   font-weight: 500;
 }
 
+/* Edit button styling */
 .btn-edit {
   background: rgba(59, 184, 158, 0.2);
   color: #3bb89e;
   border: 1px solid #3bb89e;
 }
 
+/* Edit button styling */
 .btn-edit:hover {
   background: #3bb89e;
   color: white;
 }
 
+/* Delete button styling */
 .btn-delete {
   background: rgba(220, 53, 69, 0.2);
   color: #dc3545;
   border: 1px solid #dc3545;
 }
 
+/* Delete button styling */
 .btn-delete:hover {
   background: #dc3545;
   color: white;
 }
 
-/* Empty Message */
+/* Empty Message section*/
 .empty-message {
   text-align: center;
   padding: 60px 20px;
   color: #6c757d;
 }
 
+/* Empty Message section text colour*/
 .empty-message a {
   color: #3bb89e;
   text-decoration: none;
 }
 
+/* Empty Message section text colour styling*/
 .empty-message a:hover {
   text-decoration: underline;
 }
 
-/*  Footer  */
+/* Footer */
 footer {
   background: #121214;
   text-align: center;
