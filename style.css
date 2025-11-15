@@ -91,24 +91,24 @@ nav ul li a.active {
   color: #3bb89e;
 }
 
-/* title Section */
-.hero-section {
+/* dashboard Section */
+.dashboard-section {
   padding: 60px 8%;
   max-width: 1100px;
   margin: auto;
   text-align: center;
 }
 
-/* structues title section */
-.about-text { 
+/* structures dashboard text section */
+.dashboard-text {
   display: inline-block;
   width: 60%;
   vertical-align: middle;
   text-align: left;
 }
 
- /* image sizeing */
-.about-image {
+ /* dashboard image sizing */
+.dashboard-image {
   display: inline-block;
   width: 30%;
   vertical-align: middle;
@@ -116,7 +116,7 @@ nav ul li a.active {
 }
 
 /* main header */
-.about-text h1 { 
+.dashboard-text h1 {
   font-size: 2.2rem;
   font-weight: 600;
   margin-bottom: 8px;
@@ -124,28 +124,28 @@ nav ul li a.active {
 }
 
  /*sub header */
-.about-text h2 {
+.dashboard-text h2 {
   font-size: 1.4rem;
   color: #3bb89e;
   margin-bottom: 18px;
 }
 
 /* paragraph */
-.about-text p { 
+.dashboard-text p {
   color: #a5a5a8;
   margin-bottom: 20px;
   font-size: 1rem;
 }
 
-/*profile picture size and shape*/
-.about-image img { 
+/*dashboard image size and shape*/
+.dashboard-image img {
   width: 100%;
   border-radius: 12px;
   box-shadow: 0 4px 14px rgba(0,0,0,0.4);
 }
 
 /*create new notes button*/
-.hero-btn {
+.dashboard-btn {
   display: inline-block;
   margin: 6px;
   padding: 12px 24px;
@@ -157,7 +157,7 @@ nav ul li a.active {
 }
 
 /*create new notes button hover*/
-.hero-btn:hover {
+.dashboard-btn:hover {
   opacity: 0.9;
 }
 
@@ -169,7 +169,7 @@ nav ul li a.active {
 }
 
 /*border for notes section */
-.experience-section { 
+.notes-section {
   max-width: 100%;
   margin: 40px auto;
   padding: 30px;
@@ -179,7 +179,7 @@ nav ul li a.active {
 }
 
 /*notes section title */
-.experience-section h2 { 
+.notes-section h2 {
   font-size: 1.8rem;
   color: #eee;
   margin-bottom: 20px;
@@ -220,15 +220,15 @@ tr:hover {
   background-color: rgba(255,255,255,0.05);
 }
 
-/* Form sections */
+/* create notes box */
 .create-section, .edit-section {
   padding: 40px 8%;
   max-width: 800px;
   margin: auto;
 }
 
-/* contact form card */
-.contact-card { 
+/* note form card */
+.note-form {
   background: rgba(40,40,46,0.95);
   padding: 30px;
   border-radius: 12px;
@@ -238,8 +238,8 @@ tr:hover {
   margin: 0 auto;
 }
 
-/*contact form title */
-.contact-card h2 { 
+/*note form title */
+.note-form h2 {
   color: #3bb89e;
   margin-bottom: 20px;
   text-align: center;
@@ -251,9 +251,9 @@ tr:hover {
 }
 
 /*create a note input structure */
-.contact-card input, 
-.contact-card select,
-.contact-card textarea {
+.note-form input,
+.note-form select,
+.note-form textarea {
   width: 100%;
   padding: 12px;
   border-radius: 6px;
@@ -264,9 +264,9 @@ tr:hover {
   font-size: 0.9rem;
 }
 
-.contact-card input:focus,
-.contact-card select:focus,
-.contact-card textarea:focus {
+.note-form input:focus,
+.note-form select:focus,
+.note-form textarea:focus {
   outline: none;
   border-color: #3bb89e;
   box-shadow: 0 0 0 2px rgba(59, 184, 158, 0.2);
