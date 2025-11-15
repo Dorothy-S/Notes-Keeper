@@ -1,14 +1,14 @@
-// Notes System (stores notes using localStorage)
+// Notes System 
 class NotesManager {
     constructor() {
-        // Load notes or create empty list
+        // Load notes or creates empty list
         this.notes = JSON.parse(localStorage.getItem("studynotes")) || [];
         this.init();
     }
 
     // Decide which page logic to run
     init() {
-        const page = window.location.pathname.split("/").pop();
+        const page = window.location.pathname.split("/").pop(); //
         
         if (page === "index.html" || page === "") {
             this.showNotes();      // Dashboard
@@ -54,6 +54,7 @@ class NotesManager {
 
         if (i !== -1) {
             this.notes[i] = {
+                // Replace old content but keep other properties
                 ...this.notes[i],
                 title,
                 course,
@@ -98,29 +99,31 @@ class NotesManager {
                     <button class="btn-delete" onclick="notesManager.deleteNote('${n.id}')">Delete</button>
                 </td>
             </tr>
-        `).join("");
+        `).join(""); // Connects notes data in one line with edit and delete buttons 
     }
 
-    // Handle create note form
+    // create note form
     handleCreateForm() {
         const form = document.getElementById("noteForm");
         if (!form) return;
 
+        // When user submits form
         form.addEventListener("submit", e => {
             e.preventDefault();
 
+            // User input
             const title = document.getElementById("noteTitle").value.trim();
             const course = document.getElementById("noteCourse").value;
             const content = document.getElementById("noteContent").value.trim();
 
-            if (!title || !course || !content) return;
+            if (!title || !course || !content) return; // No empy feilds allowed
 
             this.addNote(title, course, content);
             window.location.href = "index.html"; // Go back
         });
     }
 
-    // Handle editing form
+    //  editing form
     handleEditForm() {
         const params = new URLSearchParams(window.location.search);
         const id = params.get("id");
@@ -154,7 +157,7 @@ class NotesManager {
         });
     }
 
-    // Prevent HTML injection
+    // displayes new notes 
     clean(text) {
         const div = document.createElement("div");
         div.textContent = text;
