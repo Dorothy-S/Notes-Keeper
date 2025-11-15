@@ -1,53 +1,54 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <!-- page setup + responsive sizing -->
+    <!-- page setup -->
     <meta charset="UTF-8">
-    <meta name="viewport">
+    <title>Edit Note - StudyNotes</title>
 
-    <title>Create New Note - StudyNotes</title>
-
-    <!-- linking css stylesheet -->
+    <!-- linking stylesheet -->
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <!-- header section for logo + navigation bar -->
+    <!-- header section -->
     <header>
         <div class="logo">
-            <h1>Study<span>Notes</span></h1> <!-- website title with highlight -->
+            <h1>Study<span>Notes</span></h1> <!-- website title -->
         </div>
 
-        <!-- navigation bar links -->
+        <!-- navigation bar -->
         <nav>
             <ul>
-                <li><a href="index.html">Dashboard</a></li> <!-- go back to homepage -->
-                <li><a href="create.html" class="active">Create Note</a></li> <!-- current page -->
+                <li><a href="index.html">Dashboard</a></li> <!-- go to homepage -->
+                <li><a href="create.html">Create Note</a></li> <!-- go to create page -->
             </ul>
         </nav>
     </header>
 
-    <!-- main content section -->
+    <!-- main page content -->
     <main>
-        <section class="create-section">
+        <section class="edit-section">
 
-            <!-- page heading for create note -->
-            <h2>Create New Study Note</h2>
+            <!-- page heading -->
+            <h2>Edit Study Note</h2>
 
-            <!-- create note form container -->
-            <form id="noteForm" class="contact-card">
+            <!-- edit note form -->
+            <form id="editNoteForm" class="contact-card">
 
-                <!-- note title input section -->
+                <!-- hidden id used to update correct note -->
+                <input type="hidden" id="editNoteId">
+
+                <!-- edit note title  -->
                 <div class="form-group">
-                    <label for="noteTitle">Note Title:</label>
-                    <input type="text" id="noteTitle" name="noteTitle" required placeholder="Enter note title">
+                    <label for="editNoteTitle">Note Title:</label>
+                    <input type="text" id="editNoteTitle" name="editNoteTitle" required>
                 </div>
 
-                <!-- course selection dropdown -->
+                <!-- edit course dropdown -->
                 <div class="form-group">
-                    <label for="noteCourse">Course/Subject:</label>
-                    <select id="noteCourse" name="noteCourse" required>
+                    <label for="editNoteCourse">Course/Subject:</label>
+                    <select id="editNoteCourse" name="editNoteCourse" required>
                         <option value="">Select a course</option>
                         <option value="INFR3120">INFR3120 - Web & Script Programming</option>
                         <option value="INFR3110">INFR3110 - Database Management</option>
@@ -57,27 +58,29 @@
                     </select>
                 </div>
 
-                <!-- main content text area -->
+                <!-- edit content input  -->
                 <div class="form-group">
-                    <label for="noteContent">Note Content:</label>
-                    <textarea id="noteContent" name="noteContent" rows="10" required placeholder="Enter your study notes here..."></textarea>
+                    <label for="editNoteContent">Note Content:</label>
+                    <textarea id="editNoteContent" name="editNoteContent" rows="10" required></textarea>
                 </div>
 
-                <!-- save + cancel buttons -->
+                <!-- update + cancel buttons -->
                 <div class="form-actions">
-                    <button type="submit" class="btn-primary">Save Note</button> <!-- save note btn -->
-                    <a href="index.html" class="btn-secondary">Cancel</a> <!-- cancel btn -->
+                    <button type="submit" class="btn-primary">Update Note</button> <!-- save updated note -->
+                    <a href="index.html" class="btn-secondary">Cancel</a> <!-- go back without saving -->
                 </div>
-            </form>
+
+            </form> 
+
         </section>
     </main>
 
-    <!-- footer -->
+    <!-- footer  -->
     <footer>
-        <p> StudyNotes Team</p>
+        <p>StudyNotes Team</p>
     </footer>
 
-    <!-- javascript file -->
+    <!--  javascript file -->
     <script src="script.js"></script>
 </body>
 </html>
